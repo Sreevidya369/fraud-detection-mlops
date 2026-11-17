@@ -1,2 +1,6 @@
 numpy
 pandas
+sqlite3
+joblib
+scikit-learn
+ 
