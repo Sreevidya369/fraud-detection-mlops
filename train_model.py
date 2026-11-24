@@ -42,12 +42,13 @@ artifact= {
     "model": model,
     "features": FEATURES,
     "version": "1.0",
+    "threshold": 0.65
 
 }
 
 joblib.dump(
     artifact,
-    "models/fraud_model.pkl"
+    "models/fraud_model_v1.joblib"
 )
 
 print("Model saved successfully")

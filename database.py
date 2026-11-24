@@ -47,16 +47,12 @@ def create_database():
             conn.execute("DROP TABLE transaction_features")
 
         conn.execute("""
-            CREATE TABLE IF NOT EXISTS transaction_features (
+            CREATE TABLE IF NOT EXISTS fraud_prediction(
                 transaction_id TEXT PRIMARY KEY,
-                customer_id TEXT NOT NULL,
-                amount REAL NOT NULL,
-                txn_count_5m INTEGER NOT NULL,
-                amount_sum_1h REAL NOT NULL,
-                avg_prior_amount REAL,
-                amount_ratio REAL,
-                city_changed INTEGER NOT NULL,
-                feature_timestamp TEXT NOT NULL,
+                fraud_score REAL NOT NULL,
+                is_suspicious INTEGER NOT NULL,
+                model_version TEXT NOT NULL,
+                predicted_at TEXT NOT NULL,
                 FOREIGN KEY (transaction_id) REFERENCES transactions(transaction_id)
             )
         """)
