@@ -29,7 +29,7 @@ def predict_fraud(features):
     return{
         "fraud_score": probability,
         "is_suspicious":prediction,
-        "model_versions":artifact["version"]
+        "model_version":artifact["version"]
     }
 
 if __name__=="__main__":
